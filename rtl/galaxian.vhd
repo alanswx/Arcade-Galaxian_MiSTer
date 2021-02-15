@@ -49,6 +49,7 @@ entity galaxian is
 		mod_uniwars  : in  std_logic;
 		mod_kingbal  : in  std_logic;
 		mod_orbitron : in  std_logic;
+		mod_victory  : in  std_logic;
 		--
 		Flip_Vertical: in  std_logic;
 		--
@@ -541,7 +542,7 @@ begin
 
 -------------------------------------------------------------------------------
 
-W_STARS_ON_ADJ <= '0' when mod_kingbal='1' else W_STARS_ON;
+W_STARS_ON_ADJ <= '0' when (mod_kingbal='1' or mod_victory='1' )else W_STARS_ON;
 
 -------------------------------------------------------------------------------
 -- King & Balloon speech board
